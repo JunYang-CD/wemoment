@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: moment-service
+  rabbitmq:
+    host: localhost
+    port: 8079
+    username: user
+    password: password
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/user_center_1
+    username: springuser
+    password: ThePassword
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8081
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
+
+rabbitmq:
+  host: localhost
+  port: 15672
+  username: user
+  password: password
+#  exchange: rabbitmq.exchange
+#  queue: rabbitmq.queue
+#  routingkey: rabbitmq.routingkey
+#  reply.timeout: 60000
+#  concurrent.consumers: 1
+#  max.concurrent.consumers: 1

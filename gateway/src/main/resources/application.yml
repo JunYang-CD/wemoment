@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: gate-service
+server:
+  port: 80
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
+jwt:
+  token:
+    expired: 100000000
+    refresh:
+      expired: 10000000
+logging:
+  level:
+    root: debug
+    org.springframework.cloud.gateway: debug
